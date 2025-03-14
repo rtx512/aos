@@ -49,3 +49,22 @@
   8. reboot
 - Проверка
   1. с L-SRV: ping 20.20.20.150
+
+### Задание 1
+- RTR-L
+  1. apt-get update
+  2. apt-get install nftables
+  4. vim /etc/nftables/nftables.nft
+       ```
+         table inet nat {
+           chain my_masquerade {
+             type nat hook postrouting priority srcnat;
+             oifname "ens19" masquerade
+           }
+         }
+       ```
+  6. systemctl enable --now nftables
+  7. systemctl status nftables
+- Проверка
+  1. на L-SRV: ping 8.8.8.8
+  2. на ADMIN-PC: ping 8.8.8.8
