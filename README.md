@@ -104,4 +104,4 @@
        ![image](https://github.com/rtx512/aos/blob/master/images/img5.png)
   2. reboot
   3. Проверить, что после перезагрузки ip a 20.20.20.150/24
-- Задание 3
+# Задание 3
