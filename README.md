@@ -152,3 +152,16 @@
         ```
         ![image](https://github.com/rtx512/aos/blob/master/images/img9.png)
         ![image](https://github.com/rtx512/aos/blob/master/images/img10.png)
+- ADMIN-PC
+  1. apt-get update
+  2. apt-get install samba-client krb5-kdc
+  3. apt-get install -y task-auth-ad-sssd
+  4. Предварительная проверка:
+     ```
+       host au.team
+       smbclient -L l-srv.au.team -U Administrator
+       kinit Administrator@AU.TEAM
+       klist
+     ```
+     ![image](https://github.com/rtx512/aos/blob/master/images/img11.jpg)
+  6. в
