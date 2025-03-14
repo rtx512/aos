@@ -128,3 +128,17 @@
   16. samba-tool group add left
   17. samba-tool group add admin
   18. vim script.sh
+        ```
+          #!/bin/bash
+          for i in {1..15}; do
+                samba-tool user create user${i}.userl "user123U"
+                samba-tool group addmembers left user${i}.userl
+          done
+
+          for i in {1..5}; do
+            samba-tool user create user${i}.admin "user123U"
+            samba-tool group addmembers admin user${i}.admin
+          done
+        ```
+  20. chmod +x script.sh
+  21. ./script.sh
