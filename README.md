@@ -140,5 +140,6 @@
             samba-tool group addmembers admin user${i}.admin
           done
         ```
+        ![image](https://github.com/rtx512/aos/blob/master/images/img8.png)
   20. chmod +x script.sh
   21. ./script.sh
