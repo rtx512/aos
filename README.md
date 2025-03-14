@@ -104,4 +104,27 @@
        ![image](https://github.com/rtx512/aos/blob/master/images/img5.png)
   2. reboot
   3. Проверить, что после перезагрузки ip a 20.20.20.150/24
-# Задание 3
+### Задание 3
+- L-SRV
+  1. apt-get install alterator-fbi
+  2. systemctl start alteratord ahttpd
+  3. systemctl enable --now alteratord ahttpd
+  4. apt-get install alterator-net-domain task-samba-dc krb5-kdc
+  5. rm -f /etc/samba/smb.conf
+  6. rm -rf /var/lib/samba
+  7. rm -rf /var/cache/samba
+  8. mkdir -p /var/lib/samba/sysvol
+  9. samba-tool domain provision --realm=AU.TEAM --domain=AU --adminpass='Password123P' --dns-backend=SAMBA_INTERNAL --server-role=dc --use-rfc2307 --option="dns forwarder=94.232.137.104"
+      ![image](https://github.com/rtx512/aos/blob/master/images/img6.png)
+  11. systemctl enable --now samba
+  12. systemctl status samba #(Вылезали одни ошибки, перезагрузил машину при помощи)
+  13. reboot
+  14. systemctl status samba #(всё норм)
+  15. Для провероки:
+        ```
+          samba-tool domain info 127.0.0.1
+        ```
+        ![image](https://github.com/rtx512/aos/blob/master/images/img7.png)
+  16. samba-tool group add left
+  17. samba-tool group add admin
+  18. vim script.sh
