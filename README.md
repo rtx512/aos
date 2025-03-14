@@ -94,3 +94,14 @@
   8. systemctl enable --now dhcpd
   9. systemctl restart dhcpd
   10. systemctl status dhcpd #(если не работает, то команда dhcpd -t покажет ошибки)
+- L-SRV
+  1. vim /etc/net/ifaces/ens19/options
+       ![image](https://github.com/rtx512/aos/blob/master/images/img5.png)
+  2. reboot
+  3. Проверить, что после перезагрузки ip a 10.10.10.100/24
+- ADMIN-PC
+  1. vim /etc/net/ifaces/ens19/options
+       ![image](https://github.com/rtx512/aos/blob/master/images/img5.png)
+  2. reboot
+  3. Проверить, что после перезагрузки ip a 20.20.20.150/24
+- Задание 3
