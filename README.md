@@ -143,3 +143,12 @@
         ![image](https://github.com/rtx512/aos/blob/master/images/img8.png)
   20. chmod +x script.sh
   21. ./script.sh
+  22. Проверка, что пользователи создались и добавились в группы:
+        ```
+          pdbedit -L | grep userl
+          pdbedit -L | grep admin
+          samba-tool group listmembers left
+          samba-tool group listmembers admin
+        ```
+        ![image](https://github.com/rtx512/aos/blob/master/images/img9.png)
+        ![image](https://github.com/rtx512/aos/blob/master/images/img10.png)
