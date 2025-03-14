@@ -63,6 +63,7 @@
            }
          }
        ```
+       ![image](https://github.com/rtx512/aos/blob/master/images/img2.png)
   6. systemctl enable --now nftables
   7. systemctl status nftables
 - Проверка
@@ -76,4 +77,20 @@
        ```
          DHCPDARGS="ens20 ens21"
        ```
-  5. s
+       ![image](https://github.com/rtx512/aos/blob/master/images/img3.png)
+  5. cp /etc/dhcp/dhcpd.conf.sample /etc/dhcp/dhcpd.conf
+  6. vim /etc/dhcp/dhcpd.conf
+       ![image](https://github.com/rtx512/aos/blob/master/images/img4.png)
+       ```
+         host l-srv {
+           hardware ethernet XX:XX:XX:XX:XX:XX; # Замените на MAC-адрес L-SRV (на L-SRV через команду ip a смотрим mac-адрес для ens19)
+           fixed-address 10.10.10.100;
+         }
+         host admin-pc {
+           hardware ethernet YY:YY:YY:YY:YY:YY;  # Замените на MAC-адрес ADMIN-PC (на ADMIN-PC через команду ip a смотрим mac-адрес для ens19)
+           option domain-name-servers 10.10.10.100, 94.232.137.105, 94.232.137.105;
+         }
+       ```
+  8. systemctl enable --now dhcpd
+  9. systemctl restart dhcpd
+  10. systemctl status dhcpd #(если не работает, то команда dhcpd -t покажет ошибки)
