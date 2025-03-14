@@ -9,9 +9,9 @@
   3. cp -r /etc/net/ifaces/ens19/ /etc/net/ifaces/ens20/
   4. cp -r /etc/net/ifaces/ens19/ /etc/net/ifaces/ens21/
   5. vim /etc/net/ifaces/ens20/options
-       ![image](https://github.com/rtx512/aos/blob/master/images/image.png)
+       ![image](https://github.com/rtx512/aos/blob/master/images/img1.png)
   7. vim /etc/net/ifaces/ens21/options
-       ![image](https://github.com/rtx512/aos/blob/master/images/image.png)
+       ![image](https://github.com/rtx512/aos/blob/master/images/img1.png)
   8. vim /etc/net/ifaces/ens20/ipv4address
       ```
         10.10.10.1/24
@@ -24,7 +24,7 @@
 - L-SRV
   1. hostnamectl set-hostname l-srv.au.team; exec bash
   2. vim /etc/net/ifaces/ens19/options
-      ![image](https://github.com/rtx512/aos/blob/master/images/image.png)
+      ![image](https://github.com/rtx512/aos/blob/master/images/img1.png)
   4. vim /etc/net/ifaces/ens19/ipv4address
        ```
          10.10.10.100/24
@@ -37,7 +37,7 @@
 - ADMIN-PC
   1. hostnamectl set-hostname admin-pc.au.team; exec bash
   2. vim /etc/net/ifaces/ens19/options
-       ![image](https://github.com/rtx512/aos/blob/master/images/image.png)
+       ![image](https://github.com/rtx512/aos/blob/master/images/img1.png)
   4. vim /etc/net/ifaces/ens19/ipv4address
        ```
          20.20.20.150/24
@@ -68,3 +68,12 @@
 - Проверка
   1. на L-SRV: ping 8.8.8.8
   2. на ADMIN-PC: ping 8.8.8.8
+### Задание 2
+- RTR-L
+  1. apt-get update
+  2. apt-get install dhcp-server
+  3. vim /etc/sysconfig/dhcpd
+       ```
+         DHCPDARGS="ens20 ens21"
+       ```
+  5. s
