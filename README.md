@@ -35,3 +35,15 @@
        ```
   8. reboot
 - ADMIN-PC
+  1. hostnamectl set-hostname admin-pc.au.team; exec bash
+  2. vim /etc/net/ifaces/ens19/options
+       ![image](https://github.com/rtx512/aos/blob/master/images/image.png)
+  4. vim /etc/net/ifaces/ens19/ipv4address
+       ```
+         20.20.20.150/24
+       ```
+  6. vim /etc/net/ifaces/ens19/ipv4route
+       ```
+         default via 20.20.20.1
+       ```
+  8. reboot
