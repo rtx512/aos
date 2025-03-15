@@ -194,4 +194,12 @@
   10. samba-tool dns add 10.10.10.100 20.20.20.in-addr.arpa 150 PTR admin-pc -U administrator
   11. samba-tool dns add 10.10.10.100 20.20.20.in-addr.arpa 1 PTR rtr-l -U administrator
         ![image](https://github.com/rtx512/aos/blob/master/images/img18.png)
-  
+  12. reboot
+### Задание 5
+- RTR-L
+  1. apt-get update
+  2. apt-get install openssh-server
+  3. vim /etc/openssh/sshd_config (Port 22 и PasswordAuthentication yes)
+  4. systemctl start sshd
+  5. systemctl enable --now sshd
+       ![image](https://github.com/rtx512/aos/blob/master/images/img19.png)
