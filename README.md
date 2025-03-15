@@ -176,6 +176,7 @@
        ![image](https://github.com/rtx512/aos/blob/master/images/img15.png)
   4. systemctl restart samba
 - ADMIN-PC
-  1. vim /etc/fstab
+  1. Заходим под обычного user (su - user)
+  2. vim /etc/fstab
        ![image](https://github.com/rtx512/aos/blob/master/images/img16.png)
-  2. И так далее для всех пользователей…
+  3. И так далее для всех пользователей…
