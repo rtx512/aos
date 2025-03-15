@@ -164,4 +164,14 @@
        klist
      ```
      ![image](https://github.com/rtx512/aos/blob/master/images/img13.jpg)
-  6. в
+  6. system-auth write ad au.team admin-pc AU 'administrator' 'Password123P'
+  7. net ads testjoin
+  8. Получаем из команд 6,7:
+      ![image](https://github.com/rtx512/aos/blob/master/images/img14.jpg)
+  10. reboot #(Теперь под созданными пользователями можно будет войти)
+- L-SRV
+  1. mkdir /mnt/Adsamba/
+  2. chmod 777 /Adsamba/
+  3. vim /etc/samba/smb.conf
+       ![image](https://github.com/rtx512/aos/blob/master/images/img15.png)
+  5. systemctl restart samba
