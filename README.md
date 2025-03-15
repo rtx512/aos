@@ -163,5 +163,5 @@
        kinit Administrator@AU.TEAM
        klist
      ```
-     ![image](https://github.com/rtx512/aos/blob/master/images/img11.jpg)
+     ![image](https://github.com/rtx512/aos/blob/master/images/img13.jpg)
   6. в
