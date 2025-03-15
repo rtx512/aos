@@ -180,3 +180,18 @@
   2. vim /etc/fstab
        ![image](https://github.com/rtx512/aos/blob/master/images/img16.png)
   3. И так далее для всех пользователей…
+### Задание 4
+- L-SRV
+  1. samba-tool dns query 127.0.0.1 au.team l-srv A -U administrator
+  2. samba-tool dns query 127.0.0.1 au.team admin-pc A -U administrator
+  3. samba-tool dns query 10.10.10.100 au.team rtr-l A 20.20.20.1 -U administrator
+  4. samba-tool dns query 127.0.0.1 au.team rtr-l A -U administrator
+       ![image](https://github.com/rtx512/aos/blob/master/images/img17.png)
+  6. samba-tool dns zonecreate 10.10.10.100 10.10.10.in-addr.arpa -U administrator
+  7. samba-tool dns zonecreate 10.10.10.100 20.20.20.in-addr.arpa -U administrator
+  8. samba-tool dns add 10.10.10.100 10.10.10.in-addr.arpa 1 PTR rtr-l -U administrator
+  9. samba-tool dns add 10.10.10.100 10.10.10.in-addr.arpa 100 PTR l-srv -U administrator
+  10. samba-tool dns add 10.10.10.100 20.20.20.in-addr.arpa 150 PTR admin-pc -U administrator
+  11. samba-tool dns add 10.10.10.100 20.20.20.in-addr.arpa 1 PTR rtr-l -U administrator
+        ![image](https://github.com/rtx512/aos/blob/master/images/img18.png)
+  
