@@ -1,3 +1,5 @@
+https://github.com/rtx512/aos
+
 ### Задание 0
 - RTR-L
   1. hostnamectl set-hostname rtr-l.au.team; exec bash
