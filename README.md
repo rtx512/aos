@@ -174,4 +174,8 @@
   2. chmod 777 /Adsamba/
   3. vim /etc/samba/smb.conf
        ![image](https://github.com/rtx512/aos/blob/master/images/img15.png)
-  5. systemctl restart samba
+  4. systemctl restart samba
+- ADMIN-PC
+  1. vim /etc/fstab
+       ![image](https://github.com/rtx512/aos/blob/master/images/img16.png)
+  2. И так далее для всех пользователей…
